@@ -286,3 +286,16 @@ export const FAQS = [
       "Untuk saat ini website Tanira berfungsi sebagai halaman informasi resmi untuk mengenal proses pembuatan dan keaslian produk kami. Fitur pemesanan online langsung melalui website sedang disiapkan untuk pengembangan tahap berikutnya.",
   },
 ];
+
+export const LOCATION_INFO = {
+  title: "Lokasi Dapur & Pengolahan Aren Keluarga",
+  region: "Kec. Bandar Masilam, Kab. Simalungun, Sumatera Utara",
+  coordinatesLabel: "3°14'10.7\"N 99°15'50.9\"E",
+  latitude: 3.236304,
+  longitude: 99.264124,
+  googleMapsUrl: "https://maps.app.goo.gl/XsMV7sRscGDVAZDJ6",
+  embedUrl:
+    "https://maps.google.com/maps?q=3.236304,99.264124&hl=id&z=16&output=embed",
+  description:
+    "Gula Aren Cetak dan Air Nira Segar Tanira diolah langsung di dapur keluarga kami. Anda dapat melihat titik lokasi pengolahan kami melalui peta interaktif berikut.",
+};

@@ -17,6 +17,8 @@ import {
   ArrowDown,
   Sun,
   Award,
+  MapPin,
+  ExternalLink,
 } from "lucide-react";
 import {
   BRAND_INFO,
@@ -26,6 +28,7 @@ import {
   COMPARISON_ROWS,
   FAQS,
   ORDERING_CONFIG,
+  LOCATION_INFO,
 } from "@/data/tanira";
 
 export default function TaniraLandingPage() {
@@ -102,6 +105,12 @@ export default function TaniraLandingPage() {
             </a>
             <a href="#faq" className="hover:text-[#A2AC82] transition-colors">
               Tanya Jawab
+            </a>
+            <a
+              href="#lokasi"
+              className="hover:text-[#A2AC82] transition-colors"
+            >
+              Lokasi
             </a>
           </nav>
 
@@ -716,7 +725,10 @@ export default function TaniraLandingPage() {
         </section>
 
         {/* TANYA JAWAB (FAQ) SECTION - Sage Green Surface */}
-        <section id="faq" className="py-20 lg:py-24 bg-sage-surface">
+        <section
+          id="faq"
+          className="py-20 lg:py-24 bg-sage-surface border-b border-[#5B6D49]/35"
+        >
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center space-y-3 mb-12">
               <span className="inline-block px-3.5 py-1 rounded-full bg-[#0C3C01] text-[#A2AC82] text-xs font-bold uppercase tracking-[0.18em]">
@@ -765,6 +777,81 @@ export default function TaniraLandingPage() {
                   </div>
                 );
               })}
+            </div>
+          </div>
+        </section>
+
+        {/* LOKASI DAPUR & PENGOLAHAN AREN (GOOGLE MAPS SECTION) */}
+        <section
+          id="lokasi"
+          className="py-20 lg:py-24 bg-[#5B6D49] text-[#F1F2ED]"
+        >
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
+              {/* Left Info Column */}
+              <div className="lg:col-span-5 bg-[#0C3C01] rounded-3xl p-7 sm:p-9 border-2 border-[#A2AC82]/50 shadow-xl flex flex-col justify-between">
+                <div>
+                  <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#5B6D49]/60 border border-[#A2AC82]/40 text-xs font-bold uppercase tracking-wider text-[#A2AC82]">
+                    <MapPin className="w-3.5 h-3.5" />
+                    <span>Titik Lokasi Pengolahan</span>
+                  </span>
+
+                  <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl font-normal text-[#F1F2ED] mt-4 leading-tight">
+                    {LOCATION_INFO.title}
+                  </h2>
+
+                  <p className="text-sm sm:text-base text-[#F1F2ED]/85 leading-relaxed mt-3">
+                    {LOCATION_INFO.description}
+                  </p>
+
+                  <div className="mt-6 p-4 rounded-2xl bg-[#5B6D49]/35 border border-[#A2AC82]/35 space-y-2">
+                    <div>
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-[#A2AC82] block">
+                        Wilayah
+                      </span>
+                      <span className="text-sm font-semibold text-[#F1F2ED] block">
+                        {LOCATION_INFO.region}
+                      </span>
+                    </div>
+                    <div className="pt-2 border-t border-[#A2AC82]/25">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-[#A2AC82] block">
+                        Koordinat Peta
+                      </span>
+                      <span className="text-xs font-mono text-[#F1F2ED]/90 block">
+                        {LOCATION_INFO.coordinatesLabel}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8">
+                  <a
+                    href={LOCATION_INFO.googleMapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center gap-2.5 py-3.5 px-5 rounded-xl bg-[#A2AC82] text-[#0C3C01] font-bold text-sm hover:bg-[#F1F2ED] transition-all shadow-md"
+                  >
+                    <MapPin className="w-4 h-4" />
+                    <span>Buka Petunjuk Arah di Google Maps</span>
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Right Map Embed Column */}
+              <div className="lg:col-span-7 rounded-3xl overflow-hidden border-2 border-[#A2AC82] shadow-2xl bg-[#2E2D1D] min-h-[380px] sm:min-h-[460px] relative">
+                <iframe
+                  src={LOCATION_INFO.embedUrl}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Peta Lokasi Dapur Gula Aren Tanira"
+                  className="w-full h-full min-h-[380px] sm:min-h-[460px]"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -825,6 +912,12 @@ export default function TaniraLandingPage() {
               </a>
               <a href="#faq" className="hover:text-[#A2AC82] transition-colors">
                 FAQ
+              </a>
+              <a
+                href="#lokasi"
+                className="hover:text-[#A2AC82] transition-colors"
+              >
+                Lokasi
               </a>
             </div>
           </div>
