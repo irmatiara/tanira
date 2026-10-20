@@ -26,7 +26,6 @@ export interface ProcessStep {
   stepNumber: string;
   title: string;
   localTerm: string;
-  timeWindow: string;
   description: string;
   keyDetail: string;
 }
@@ -93,7 +92,7 @@ export const PURITY_ADVANTAGES: PurityAdvantage[] = [
   {
     id: "segar-harian",
     title: "Sadapan Segar yang Langsung Diolah",
-    subtitle: "Menjaga Kualitas Sejak Subuh",
+    subtitle: "Menjaga Kualitas Sejak Pagi",
     description:
       "Air nira diambil langsung dari pohon pada pagi dan sore hari menggunakan bumbung bersih, lalu segera disaring dan dimasak di hari yang sama sebelum mengalami fermentasi berlebih.",
     metric: "Olahan Harian",
@@ -105,16 +104,14 @@ export const PROCESS_STEPS: ProcessStep[] = [
     stepNumber: "01",
     title: "Perawatan & Pemukulan Mayang",
     localTerm: "Persiapan Tangkai Aren",
-    timeWindow: "Tahap Pra-Sadap",
     description:
       "Tangkai bunga pohon aren (mayang) dirawat dan dipukul-pukul secara perlahan serta berulang selama beberapa minggu. Tradisi ini bertujuan membuka pori-pori pembuluh tandan agar air nira mengalir deras dan manis alami.",
     keyDetail: "Menentukan kualitas dan kemanisan tetesan nira",
   },
   {
     stepNumber: "02",
-    title: "Penyadapan Air Nira di Waktu Subuh",
+    title: "Penyadapan Air Nira di Pagi Hari",
     localTerm: "Panen Tetesan Nira Segar",
-    timeWindow: "05.30 – 07.00 Pagi & Sore",
     description:
       "Bumbung bambu atau wadah penampung dipasang pada ujung manggar yang telah diiris tipis. Tetes demi tetes nira dikumpulkan dan dipanen pagi-pagi buta sebelum udara memanas agar nira tetap segar dan tidak masam.",
     keyDetail: "Nira segar berwarna bening kekuningan dan beraroma harum",
@@ -123,7 +120,6 @@ export const PROCESS_STEPS: ProcessStep[] = [
     stepNumber: "03",
     title: "Penyaringan Berlapis",
     localTerm: "Pemurnian Nira Mentah",
-    timeWindow: "Setelah Turun dari Pohon",
     description:
       "Begitu tiba di dapur pengolahan, air nira segar disaring secara berlapis menggunakan saringan halus untuk memisahkan serbuk bunga aren, serpihan kulit kayu, atau kotoran alami dari kebun.",
     keyDetail: "Menghasilkan cairan nira bersih yang siap direbus",
@@ -132,7 +128,6 @@ export const PROCESS_STEPS: ProcessStep[] = [
     stepNumber: "04",
     title: "Perebusan di Tungku Kayu Bakar",
     localTerm: "Kawah & Api Alami",
-    timeWindow: "Durasi ± 3 hingga 4 Jam",
     description:
       "Air nira dituangkan ke dalam wajan besar (kawah) di atas tungku tanah liat berbahan bakar kayu. Seiring air menguap, nira mendidih dan mengeluarkan buih keemasan yang terus dibersihkan sambil diaduk perlahan.",
     keyDetail: "Panas kayu bakar memberikan aroma smoky-caramel yang khas",
@@ -141,7 +136,6 @@ export const PROCESS_STEPS: ProcessStep[] = [
     stepNumber: "05",
     title: "Pengadukan Pekat & Uji Tetes Air",
     localTerm: "Menentukan Titik Matang",
-    timeWindow: "Fase Karamelisasi",
     description:
       "Saat cairan berubah menjadi kental kecokelatan (pekat), api dikecilkan agar tidak gosong. Pengrajin menguji kematangan dengan meneteskan sedikit adonan gula ke dalam air dingin—jika langsung memadat dan lentur, gula siap diangkat.",
     keyDetail: "Keahlian tangan orang tua dalam menjaga suhu agar tidak pahit",
@@ -150,7 +144,6 @@ export const PROCESS_STEPS: ProcessStep[] = [
     stepNumber: "06",
     title: "Pencetakan & Pendinginan Alami",
     localTerm: "Gula Aren Cetak Tradisional",
-    timeWindow: "Pendinginan 30–60 Menit",
     description:
       "Adonan gula aren panas dituangkan satu per satu ke dalam cetakan tradisional yang telah dibasahi air bersih. Tanpa bahan pengeras buatan, gula dibiarkan mengeras secara alami oleh suhu ruang hingga siap dilepas dari cetakan.",
     keyDetail: "Menghasilkan gula cetak padat yang lembut saat diiris",
@@ -212,7 +205,7 @@ export const PRODUCTS: ProductItem[] = [
     ],
     characteristics: [
       { label: "Bentuk", value: "Cairan Nira Segar" },
-      { label: "Waktu Panen", value: "Sadapan Pagi (Subuh) & Sore Hari" },
+      { label: "Waktu Panen", value: "Sadapan Pagi & Sore Hari" },
       { label: "Sifat Produk", value: "Sangat segar (mudah berfermentasi alami)" },
       { label: "Ketersediaan", value: "Mengikuti jadwal turun sadapan harian" },
     ],

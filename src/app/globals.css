@@ -3,18 +3,17 @@
 @theme inline {
   --font-serif: var(--font-serif), Georgia, serif;
   --font-sans: var(--font-sans), system-ui, sans-serif;
+
+  /* Palet Warna Utama Tanira (Bisa dipanggil via bg-*, text-*, border-*, dll) */
+  --color-mist: #f1f2ed;
+  --color-sage: #a2ac82;
+  --color-moss: #5b6d49;
+  --color-forest: #0c3c01;
+  --color-earth: #2e2d1d;
+  --color-olive: #7e7b56;
 }
 
 @layer base {
-  :root {
-    --color-mist: #f1f2ed;
-    --color-sage: #a2ac82;
-    --color-moss: #5b6d49;
-    --color-forest: #0c3c01;
-    --color-earth: #2e2d1d;
-    --color-olive: #7e7b56;
-  }
-
   html {
     scroll-behavior: smooth;
     background-color: var(--color-forest);
@@ -29,8 +28,7 @@
     overflow-x: hidden;
   }
 
-  .font-serif,
-  [class*="var(--font-serif)"] {
+  .font-serif {
     font-family: var(--font-serif), Georgia, serif;
     font-weight: 400;
   }
@@ -38,7 +36,7 @@
 
 /* Deep green botanical hero pattern */
 .bg-hero-botanical {
-  background-color: #0c3c01;
+  background-color: var(--color-forest);
   background-image: radial-gradient(
       circle at 15% 20%,
       rgba(91, 109, 73, 0.45) 0%,
