@@ -7,25 +7,25 @@
 
 @layer base {
   :root {
-    --bg-linen: #faf7f2;
-    --bg-sand: #f2ece1;
-    --tanira-olive: #7e7b56;
-    --tanira-olive-dark: #5c593b;
-    --aren-deep: #362013;
-    --aren-brown: #5e371f;
-    --aren-amber: #b86b2b;
-    --aren-gold: #d99b4e;
+    --color-mist: #f1f2ed;
+    --color-sage: #a2ac82;
+    --color-moss: #5b6d49;
+    --color-forest: #0c3c01;
+    --color-earth: #2e2d1d;
+    --color-olive: #7e7b56;
   }
 
   html {
     scroll-behavior: smooth;
-    background-color: var(--bg-linen);
-    color: var(--aren-deep);
+    background-color: var(--color-forest);
+    color: var(--color-earth);
     font-family: var(--font-sans), system-ui, sans-serif;
   }
 
   body {
     font-family: var(--font-sans), system-ui, sans-serif;
+    background-color: var(--color-sage);
+    color: var(--color-earth);
     overflow-x: hidden;
   }
 
@@ -36,11 +36,29 @@
   }
 }
 
-/* Subtle organic grain & warm glow helpers */
-.bg-organic-pattern {
-  background-image: radial-gradient(rgba(126, 123, 86, 0.08) 1px,
-      transparent 1px),
-    radial-gradient(rgba(184, 107, 43, 0.05) 1px, #faf7f2 1px);
-  background-size: 28px 28px;
-  background-position: 0 0, 14px 14px;
+/* Deep green botanical hero pattern */
+.bg-hero-botanical {
+  background-color: #0c3c01;
+  background-image: radial-gradient(
+      circle at 15% 20%,
+      rgba(91, 109, 73, 0.45) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(162, 172, 130, 0.2) 0%,
+      transparent 50%
+    ),
+    radial-gradient(rgba(162, 172, 130, 0.12) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 28px 28px;
+}
+
+/* Soft sage pattern for middle sections */
+.bg-sage-surface {
+  background-color: #d8dec8;
+  background-image: radial-gradient(
+    rgba(12, 60, 1, 0.06) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
 }
