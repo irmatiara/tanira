@@ -617,21 +617,21 @@ export default function TaniraLandingPage() {
             {/* Future Online Ordering Notice Banner */}
             {!ORDERING_CONFIG.enableDirectOrder && (
               <div className="mt-10 bg-moss text-mist rounded-2xl p-6 border-2 border-sage/60 shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <div className="flex items-start gap-3.5">
-                  <div className="w-10 h-10 rounded-xl bg-forest border border-sage/40 flex items-center justify-center shrink-0 text-sage">
-                    <Sparkles className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-mist">
+                <div className="space-y-2.5">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-forest border border-sage/40 flex items-center justify-center shrink-0 text-sage">
+                      <Sparkles className="w-5 h-5" />
+                    </div>
+                    <h4 className="text-sm sm:text-base font-bold text-mist">
                       Pengembangan Fitur Pemesanan Langsung
                     </h4>
-                    <p className="text-xs sm:text-sm text-mist/85 mt-0.5">
-                      Halaman ini dirancang sebagai pusat informasi proses &
-                      keaslian produk Tanira. Fitur pemesanan langsung (untuk
-                      Gula Aren Cetak maupun jadwal sadap Air Nira) sedang
-                      disiapkan untuk pengembangan selanjutnya.
-                    </p>
                   </div>
+                  <p className="text-xs sm:text-sm text-mist/85 leading-relaxed">
+                    Halaman ini dirancang sebagai pusat informasi proses &
+                    keaslian produk Tanira. Fitur pemesanan langsung (untuk
+                    Gula Aren Cetak maupun jadwal sadap Air Nira) sedang
+                    disiapkan untuk pengembangan selanjutnya.
+                  </p>
                 </div>
                 <span className="shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold bg-forest text-sage border border-sage/50">
                   Segera Hadir
@@ -663,35 +663,50 @@ export default function TaniraLandingPage() {
               </p>
             </div>
 
-            <div className="bg-mist text-earth rounded-3xl overflow-hidden border-2 border-sage shadow-2xl">
-              <div className="grid grid-cols-1 md:grid-cols-12 bg-moss text-mist border-b border-sage/50 text-xs font-bold uppercase tracking-wider">
-                <div className="p-4 sm:p-6 md:col-span-3 text-mist">
+            <div className="md:bg-mist md:text-earth md:rounded-3xl md:overflow-hidden md:border-2 md:border-sage md:shadow-2xl">
+              {/* Desktop Table Header (Hidden on Mobile) */}
+              <div className="hidden md:grid md:grid-cols-12 bg-moss text-mist border-b border-sage/50 text-xs font-bold uppercase tracking-wider">
+                <div className="p-6 md:col-span-3 text-mist">
                   Aspek Pengujian
                 </div>
-                <div className="p-4 sm:p-6 md:col-span-5 text-mist bg-forest/35 border-t md:border-t-0 md:border-l border-sage/40 flex items-center gap-2">
+                <div className="p-6 md:col-span-5 text-mist bg-forest/35 border-l border-sage/40 flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-sage shrink-0" />
                   <span>Gula Aren Cetak Asli (Tanira)</span>
                 </div>
-                <div className="p-4 sm:p-6 md:col-span-4 text-mist/90 border-t md:border-t-0 md:border-l border-sage/40 flex items-center gap-2">
+                <div className="p-6 md:col-span-4 text-mist/90 border-l border-sage/40 flex items-center gap-2">
                   <XCircle className="w-4 h-4 text-sage shrink-0" />
                   <span>Gula Merah Campuran</span>
                 </div>
               </div>
 
-              <div className="divide-y divide-sage/45">
+              {/* Rows: Stacked Cards on Mobile, Table Rows on Desktop */}
+              <div className="space-y-4 md:space-y-0 md:divide-y md:divide-sage/45">
                 {COMPARISON_ROWS.map((row) => (
                   <div
                     key={row.aspect}
-                    className="grid grid-cols-1 md:grid-cols-12 text-sm sm:text-base"
+                    className="bg-mist text-earth rounded-2xl md:rounded-none overflow-hidden border-2 border-sage md:border-0 shadow-md md:shadow-none grid grid-cols-1 md:grid-cols-12 text-sm sm:text-base"
                   >
-                    <div className="p-4 sm:p-6 md:col-span-3 font-bold text-forest bg-sage/25">
+                    {/* Aspect Title */}
+                    <div className="px-5 py-3.5 sm:p-6 md:col-span-3 font-bold text-mist md:text-forest bg-moss md:bg-sage/25 flex items-center">
                       {row.aspect}
                     </div>
-                    <div className="p-4 sm:p-6 md:col-span-5 text-forest font-medium bg-sage/10 md:border-l border-sage/45 leading-relaxed">
-                      {row.authenticAren}
+
+                    {/* Authentic Aren Cell */}
+                    <div className="p-5 sm:p-6 md:col-span-5 text-forest font-medium bg-sage/15 md:bg-sage/10 md:border-l border-sage/45 leading-relaxed space-y-1.5">
+                      <div className="flex md:hidden items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-forest">
+                        <CheckCircle2 className="w-4 h-4 text-moss shrink-0" />
+                        <span>Gula Aren Cetak Asli (Tanira)</span>
+                      </div>
+                      <p>{row.authenticAren}</p>
                     </div>
-                    <div className="p-4 sm:p-6 md:col-span-4 text-earth/75 bg-mist md:border-l border-sage/45 leading-relaxed">
-                      {row.mixedSugar}
+
+                    {/* Mixed Sugar Cell */}
+                    <div className="p-5 sm:p-6 md:col-span-4 text-earth/80 bg-mist border-t md:border-t-0 md:border-l border-sage/45 leading-relaxed space-y-1.5">
+                      <div className="flex md:hidden items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-olive">
+                        <XCircle className="w-4 h-4 text-olive shrink-0" />
+                        <span>Gula Merah Campuran</span>
+                      </div>
+                      <p>{row.mixedSugar}</p>
                     </div>
                   </div>
                 ))}
@@ -851,7 +866,7 @@ export default function TaniraLandingPage() {
       {/* FOOTER - Deep Forest Canopy */}
       <footer className="bg-forest text-mist border-t-2 border-moss pt-12 pb-8">
         <div className="w-full max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-moss/60">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-5 border-b border-moss/60">
             {/* Column 1: Brand Identity (Left) */}
             <div className="space-y-4 max-w-md">
               <div className="flex items-center gap-4">
@@ -909,12 +924,9 @@ export default function TaniraLandingPage() {
             </div>
           </div>
 
-          <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-mist/75">
+          <div className="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4 text-xs text-mist/75">
             <p>
               © {new Date().getFullYear()} TANIRA - Tunas Alam Nira Asli.
-            </p>
-            <p className="font-semibold text-sage">
-              100% Nira Aren Murni • Tanpa Pengawet • Olahan Tradisional
             </p>
           </div>
         </div>
