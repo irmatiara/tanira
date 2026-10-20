@@ -11,7 +11,6 @@ import {
   CheckCircle2,
   XCircle,
   ChevronDown,
-  Utensils,
   Info,
   ArrowDown,
   Sun,
@@ -382,14 +381,14 @@ export default function TaniraLandingPage() {
           </div>
         </section>
 
-        {/* PRODUK KAMI SECTION (GULA CETAK & AIR NIRA MURNI) */}
+        {/* PRODUK KAMI SECTION (GULA CETAK & AIR NIRA MURNI - RINGKAS) */}
         <section
           id="produk"
-          className="py-20 lg:py-28 bg-sage-surface border-b border-moss/35"
+          className="py-18 lg:py-24 bg-sage-surface border-b border-moss/35"
         >
           <div className="w-full max-w-7xl mx-auto px-6 lg:px-12">
-            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-14">
-              <div className="max-w-2xl space-y-3">
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
+              <div className="max-w-2xl space-y-2.5">
                 <span className="inline-block px-3.5 py-1 rounded-full bg-forest text-sage text-xs font-bold uppercase tracking-[0.18em]">
                   Hasil Olahan Keluarga Tanira
                 </span>
@@ -398,22 +397,20 @@ export default function TaniraLandingPage() {
                 </h2>
               </div>
               <p className="text-sm sm:text-base text-earth/85 leading-relaxed max-w-xl">
-                Untuk menjaga kualitas dan keaslian rasa, orang tua kami hanya
-                memproduksi{" "}
-                <strong className="text-forest">Gula Aren Cetak</strong>{" "}
+                Fokus pada <strong className="text-forest">Gula Aren Cetak</strong>{" "}
                 sebagai produk utama, serta melayani pembelian{" "}
                 <strong className="text-forest">Air Nira Aren Segar</strong>{" "}
-                sesuai jadwal sadapan.
+                sesuai jadwal sadapan harian.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
               {PRODUCTS.map((product) => {
                 const isPrimary = product.isPrimary;
                 return (
                   <div
                     key={product.id}
-                    className={`rounded-3xl p-7 sm:p-9 border-2 flex flex-col justify-between transition-all ${
+                    className={`rounded-3xl p-6 sm:p-8 border-2 flex flex-col justify-between transition-all ${
                       isPrimary
                         ? "bg-forest text-mist border-sage shadow-xl"
                         : "bg-mist text-earth border-moss/45 shadow-md"
@@ -421,7 +418,7 @@ export default function TaniraLandingPage() {
                   >
                     <div>
                       {/* Product Header */}
-                      <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
+                      <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                         <span
                           className={`px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${
                             isPrimary
@@ -448,16 +445,16 @@ export default function TaniraLandingPage() {
                         {product.name}
                       </h3>
                       <p
-                        className={`text-sm sm:text-base leading-relaxed mt-3 ${
+                        className={`text-sm leading-relaxed mt-2 ${
                           isPrimary ? "text-mist/85" : "text-earth/85"
                         }`}
                       >
-                        {product.fullDescription}
+                        {product.shortDescription}
                       </p>
 
-                      {/* Characteristics Grid */}
+                      {/* Compact 2x2 Characteristics Grid */}
                       <div
-                        className={`grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6 p-4 rounded-2xl border ${
+                        className={`grid grid-cols-2 gap-3 mt-5 p-4 rounded-2xl border ${
                           isPrimary
                             ? "bg-moss/35 border-sage/40"
                             : "bg-sage/25 border-moss/30"
@@ -466,7 +463,7 @@ export default function TaniraLandingPage() {
                         {product.characteristics.map((char) => (
                           <div key={char.label} className="space-y-0.5">
                             <span
-                              className={`text-[11px] font-bold uppercase tracking-wider block ${
+                              className={`text-[10px] font-bold uppercase tracking-wider block ${
                                 isPrimary ? "text-sage" : "text-moss"
                               }`}
                             >
@@ -483,91 +480,28 @@ export default function TaniraLandingPage() {
                         ))}
                       </div>
 
-                      {/* Highlights */}
-                      <div className="mt-6 space-y-2.5">
-                        <h4
-                          className={`text-xs font-bold uppercase tracking-wider ${
-                            isPrimary ? "text-sage" : "text-forest"
-                          }`}
-                        >
-                          Keunggulan Utama:
-                        </h4>
-                        <ul className="space-y-2">
-                          {product.highlights.map((hl) => (
-                            <li
-                              key={hl}
-                              className={`flex items-start gap-2.5 text-sm ${
-                                isPrimary ? "text-mist/90" : "text-earth/85"
+                      {/* Concise Highlights (3 Key Points) */}
+                      <ul className="mt-5 space-y-2">
+                        {product.highlights.slice(0, 3).map((hl) => (
+                          <li
+                            key={hl}
+                            className={`flex items-start gap-2.5 text-xs sm:text-sm ${
+                              isPrimary ? "text-mist/90" : "text-earth/85"
+                            }`}
+                          >
+                            <CheckCircle2
+                              className={`w-4 h-4 shrink-0 mt-0.5 ${
+                                isPrimary ? "text-sage" : "text-forest"
                               }`}
-                            >
-                              <CheckCircle2
-                                className={`w-4 h-4 shrink-0 mt-0.5 ${
-                                  isPrimary ? "text-sage" : "text-forest"
-                                }`}
-                              />
-                              <span>{hl}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Culinary Usage Ideas */}
-                      <div
-                        className={`mt-6 pt-5 border-t ${
-                          isPrimary ? "border-moss" : "border-sage/60"
-                        }`}
-                      >
-                        <h4
-                          className={`inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider ${
-                            isPrimary ? "text-sage" : "text-moss"
-                          }`}
-                        >
-                          <Utensils className="w-3.5 h-3.5" />
-                          <span>Cocok Digunakan Untuk:</span>
-                        </h4>
-                        <ul className="mt-2.5 space-y-1.5">
-                          {product.usageIdeas.map((idea) => (
-                            <li
-                              key={idea}
-                              className={`text-xs sm:text-sm flex items-center gap-2 ${
-                                isPrimary ? "text-mist/85" : "text-earth/80"
-                              }`}
-                            >
-                              <span
-                                className={`w-1.5 h-1.5 rounded-full shrink-0 ${
-                                  isPrimary ? "bg-sage" : "bg-moss"
-                                }`}
-                              />
-                              <span>{idea}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                            />
+                            <span>{hl}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
 
-                    {/* Storage & Availability Footer */}
-                    <div
-                      className={`mt-8 pt-5 border-t space-y-4 ${
-                        isPrimary ? "border-moss" : "border-sage/60"
-                      }`}
-                    >
-                      <div
-                        className={`rounded-xl p-3.5 border text-xs ${
-                          isPrimary
-                            ? "bg-moss/25 border-moss text-mist/90"
-                            : "bg-white border-sage/60 text-earth/85"
-                        }`}
-                      >
-                        <strong
-                          className={`block mb-0.5 ${
-                            isPrimary ? "text-sage" : "text-forest"
-                          }`}
-                        >
-                          Tips Penyimpanan:
-                        </strong>
-                        {product.storageTip}
-                      </div>
-
+                    {/* Availability Footer */}
+                    <div className="mt-6 pt-4 border-t border-sage/35">
                       {ORDERING_CONFIG.enableDirectOrder ? (
                         <button
                           type="button"
@@ -577,7 +511,7 @@ export default function TaniraLandingPage() {
                         </button>
                       ) : (
                         <div
-                          className={`flex items-start gap-3 p-3.5 rounded-xl border text-xs ${
+                          className={`flex items-start gap-2.5 p-3.5 rounded-xl border text-xs ${
                             isPrimary
                               ? "bg-moss/40 border-sage/40 text-mist"
                               : "bg-sage/30 border-moss/40 text-earth"
@@ -590,11 +524,11 @@ export default function TaniraLandingPage() {
                           />
                           <div>
                             <span
-                              className={`font-bold block ${
+                              className={`font-bold ${
                                 isPrimary ? "text-sage" : "text-forest"
                               }`}
                             >
-                              Info Ketersediaan:
+                              Ketersediaan:{" "}
                             </span>
                             <span>{product.ordering.availabilityNote}</span>
                           </div>
@@ -608,11 +542,11 @@ export default function TaniraLandingPage() {
 
             {/* Future Online Ordering Notice Banner */}
             {!ORDERING_CONFIG.enableDirectOrder && (
-              <div className="mt-10 bg-moss text-mist rounded-2xl p-6 border-2 border-sage/60 shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <div className="space-y-2.5">
+              <div className="mt-8 bg-moss text-mist rounded-2xl p-5 sm:p-6 border-2 border-sage/60 shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div className="space-y-2">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-forest border border-sage/40 flex items-center justify-center shrink-0 text-sage">
-                      <Sparkles className="w-5 h-5" />
+                    <div className="w-9 h-9 rounded-xl bg-forest border border-sage/40 flex items-center justify-center shrink-0 text-sage">
+                      <Sparkles className="w-4 h-4" />
                     </div>
                     <h4 className="text-sm sm:text-base font-bold text-mist">
                       Pengembangan Fitur Pemesanan Langsung
@@ -620,8 +554,7 @@ export default function TaniraLandingPage() {
                   </div>
                   <p className="text-xs sm:text-sm text-mist/85 leading-relaxed">
                     Halaman ini dirancang sebagai pusat informasi proses &
-                    keaslian produk Tanira. Fitur pemesanan langsung (untuk
-                    Gula Aren Cetak maupun jadwal sadap Air Nira) sedang
+                    keaslian produk Tanira. Fitur pemesanan langsung sedang
                     disiapkan untuk pengembangan selanjutnya.
                   </p>
                 </div>
