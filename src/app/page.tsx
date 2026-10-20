@@ -94,9 +94,9 @@ export default function TaniraLandingPage() {
                   <span>Warisan Olahan Tradisional Orang Tua</span>
                 </div>
 
-                <h1 className="font-[family-name:var(--font-serif)] text-4xl sm:text-5xl lg:text-[3.4rem] font-bold text-[#362013] leading-[1.12] tracking-tight">
+                <h1 className="font-[family-name:var(--font-serif)] text-4xl sm:text-5xl lg:text-[3.25rem] font-normal text-[#362013] leading-[1.15] tracking-tight">
                   Kemurnian Tetes Nira Alam,{" "}
-                  <span className="italic font-semibold text-[#B86B2B]">
+                  <span className="italic text-[#B86B2B]">
                     Diolah Jujur
                   </span>{" "}
                   Menjadi Gula Aren Asli.

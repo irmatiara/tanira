@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
+import { DM_Serif_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
 
-const serifFont = Cormorant_Garamond({
+const serifFont = DM_Serif_Display({
   subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: ["400"],
   style: ["normal", "italic"],
   variable: "--font-serif",
 });
 
-const sansFont = Plus_Jakarta_Sans({
+const sansFont = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
   variable: "--font-sans",
 });
 

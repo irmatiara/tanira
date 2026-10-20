@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme inline {
+  --font-serif: var(--font-serif), Georgia, serif;
+  --font-sans: var(--font-sans), system-ui, sans-serif;
+}
+
 @layer base {
   :root {
     --bg-linen: #faf7f2;
@@ -16,11 +21,18 @@
     scroll-behavior: smooth;
     background-color: var(--bg-linen);
     color: var(--aren-deep);
+    font-family: var(--font-sans), system-ui, sans-serif;
   }
 
   body {
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    font-family: var(--font-sans), system-ui, sans-serif;
     overflow-x: hidden;
+  }
+
+  .font-serif,
+  [class*="var(--font-serif)"] {
+    font-family: var(--font-serif), Georgia, serif;
+    font-weight: 400;
   }
 }
 
