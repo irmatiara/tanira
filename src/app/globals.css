@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-linen: #faf7f2;
+    --bg-sand: #f2ece1;
+    --tanira-olive: #7e7b56;
+    --tanira-olive-dark: #5c593b;
+    --aren-deep: #362013;
+    --aren-brown: #5e371f;
+    --aren-amber: #b86b2b;
+    --aren-gold: #d99b4e;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-linen);
+    color: var(--aren-deep);
+  }
+
+  body {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    overflow-x: hidden;
+  }
+}
+
+/* Subtle organic grain & warm glow helpers */
+.bg-organic-pattern {
+  background-image: radial-gradient(rgba(126, 123, 86, 0.08) 1px,
+      transparent 1px),
+    radial-gradient(rgba(184, 107, 43, 0.05) 1px, #faf7f2 1px);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+}
