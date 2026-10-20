@@ -304,88 +304,80 @@ export default function TaniraLandingPage() {
           </div>
         </section>
 
-        {/* CERITA PROSES PEMBUATAN (6 TAHAP) */}
+        {/* CERITA PROSES PEMBUATAN (RINGKAS 3 TAHAP) */}
         <section
           id="proses"
-          className="py-20 lg:py-28 bg-moss text-mist border-b border-forest"
+          className="py-20 lg:py-24 bg-moss text-mist border-b border-forest"
         >
           <div className="w-full max-w-7xl mx-auto px-6 lg:px-12">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end mb-14">
-              <div className="lg:col-span-7 space-y-3">
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">
+              <div className="max-w-2xl space-y-3">
                 <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-forest/60 border border-sage/40 text-xs font-bold uppercase tracking-[0.18em] text-sage">
                   <Flame className="w-4 h-4 text-sage" />
-                  <span>Dari Pohon Aren hingga ke Cetakan</span>
+                  <span>Dari Pohon Aren ke Cetakan</span>
                 </span>
                 <h2 className="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-normal text-mist leading-tight">
-                  Proses Pembuatan Gula Aren Cetak Secara Tradisional
+                  Tahap Pengolahan Tradisional
                 </h2>
               </div>
-              <div className="lg:col-span-5">
-                <p className="text-sm sm:text-base text-mist/90 leading-relaxed">
-                  Setiap keping gula aren membutuhkan kesabaran. Dimulai dari
-                  menyadap tetesan air nira saat embun pagi masih turun, hingga
-                  mengaduk kawah nira yang mendidih di atas perapian kayu bakar.
-                </p>
-              </div>
+              <p className="text-sm sm:text-base text-mist/90 leading-relaxed max-w-xl">
+                Diolah langsung di dapur keluarga pada hari yang sama saat air
+                nira diturunkan dari pohon, menjaga kesegaran dan keharuman
+                gula aren murni.
+              </p>
             </div>
 
-            {/* Full-Width Visual Feature Banner */}
-            <div className="relative rounded-3xl overflow-hidden border-2 border-sage/60 shadow-xl h-[340px] sm:h-[420px] lg:h-[460px] bg-earth mb-12">
-              <Image
-                src="/images/proses-nira.jpg"
-                alt="Proses Perebusan Air Nira Aren di Wajan Tungku Kayu Bakar"
-                width={1200}
-                height={650}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-forest/95 via-forest/35 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-8 flex flex-col lg:flex-row lg:items-end justify-between gap-6 text-mist">
-                <div className="max-w-2xl">
-                  <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold bg-sage text-forest mb-2.5">
-                    Dapur Pengolahan Tradisional
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+              {/* Left Column: Kitchen Visual */}
+              <div className="lg:col-span-5 relative rounded-3xl overflow-hidden border-2 border-sage/60 shadow-xl min-h-[300px] sm:min-h-[380px] bg-earth">
+                <Image
+                  src="/images/proses-nira.jpg"
+                  alt="Proses Perebusan Air Nira Aren di Wajan Tungku Kayu Bakar"
+                  width={900}
+                  height={650}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-forest/95 via-forest/25 to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6 text-mist">
+                  <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-sage text-forest mb-2">
+                    Dapur Pengolahan Keluarga
                   </span>
-                  <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal">
-                    Perebusan Nira Segar di Atas Tungku Kayu Bakar
+                  <h3 className="font-serif text-2xl font-normal">
+                    Perebusan dengan Tungku Kayu Bakar
                   </h3>
-                  <p className="text-xs sm:text-sm text-mist/90 mt-1.5 leading-relaxed">
-                    Di samping tungku tampak bumbung bambu penampung nira segar.
-                    Air nira dimasak perlahan selama 3–4 jam hingga berbusa
-                    keemasan dan mengental menjadi karamel gula aren murni.
+                  <p className="text-xs sm:text-sm text-mist/85 mt-1 leading-relaxed">
+                    Dimasak perlahan selama 3–4 jam hingga mengental menjadi
+                    karamel gula aren murni.
                   </p>
                 </div>
               </div>
-            </div>
 
-            {/* All 6 Steps Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {PROCESS_STEPS.map((step) => (
-                <div
-                  key={step.stepNumber}
-                  className="text-left rounded-2xl p-6 sm:p-7 transition-all border-2 bg-mist text-earth border-sage/60 hover:bg-white hover:border-forest shadow-sm hover:shadow-md flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="flex items-center justify-between gap-2 mb-3">
-                      <span className="font-serif text-2xl font-normal px-3.5 py-1 rounded-xl bg-forest text-sage">
-                        Tahap {step.stepNumber}
-                      </span>
+              {/* Right Column: 3 Concise Steps */}
+              <div className="lg:col-span-7 flex flex-col justify-between gap-4">
+                {PROCESS_STEPS.map((step) => (
+                  <div
+                    key={step.stepNumber}
+                    className="rounded-2xl p-5 sm:p-6 bg-mist text-earth border-2 border-sage/60 shadow-sm flex flex-col sm:flex-row items-start gap-4 sm:gap-5"
+                  >
+                    <span className="font-serif text-2xl font-normal px-3.5 py-1.5 rounded-xl bg-forest text-sage shrink-0">
+                      {step.stepNumber}
+                    </span>
+                    <div className="space-y-1">
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                        <h4 className="font-serif text-xl sm:text-2xl font-normal text-forest">
+                          {step.title}
+                        </h4>
+                        <span className="text-xs font-bold uppercase tracking-wider text-moss">
+                          • {step.localTerm}
+                        </span>
+                      </div>
+                      <p className="text-sm text-earth/85 leading-relaxed">
+                        {step.description}
+                      </p>
                     </div>
-
-                    <h4 className="font-serif text-xl sm:text-2xl font-normal mt-2 text-forest">
-                      {step.title}
-                    </h4>
-                    <p className="text-xs font-semibold mt-0.5 text-olive">
-                      {step.localTerm}
-                    </p>
-                    <p className="text-sm leading-relaxed mt-3 text-earth/85">
-                      {step.description}
-                    </p>
                   </div>
-
-                  <div className="mt-5 pt-3 border-t border-sage/50 flex items-center justify-between text-xs font-semibold text-forest">
-                    <span>{step.keyDetail}</span>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </section>

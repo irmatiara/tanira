@@ -102,51 +102,27 @@ export const PURITY_ADVANTAGES: PurityAdvantage[] = [
 export const PROCESS_STEPS: ProcessStep[] = [
   {
     stepNumber: "01",
-    title: "Perawatan & Pemukulan Mayang",
-    localTerm: "Persiapan Tangkai Aren",
+    title: "Penyadapan & Penyaringan Nira Segar",
+    localTerm: "Panen Pagi & Sore Hari",
     description:
-      "Tangkai bunga pohon aren (mayang) dirawat dan dipukul-pukul secara perlahan serta berulang selama beberapa minggu. Tradisi ini bertujuan membuka pori-pori pembuluh tandan agar air nira mengalir deras dan manis alami.",
-    keyDetail: "Menentukan kualitas dan kemanisan tetesan nira",
+      "Tetesan air nira disadap langsung dari pohon aren setiap pagi dan sore, lalu segera disaring berlapis agar bersih dan tetap segar sebelum terfermentasi.",
+    keyDetail: "100% air nira aren segar tanpa tambahan air",
   },
   {
     stepNumber: "02",
-    title: "Penyadapan Air Nira di Pagi Hari",
-    localTerm: "Panen Tetesan Nira Segar",
+    title: "Perebusan di Tungku Kayu Bakar",
+    localTerm: "Dimasak Perlahan ± 3–4 Jam",
     description:
-      "Bumbung bambu atau wadah penampung dipasang pada ujung manggar yang telah diiris tipis. Tetes demi tetes nira dikumpulkan dan dipanen pagi-pagi buta sebelum udara memanas agar nira tetap segar dan tidak masam.",
-    keyDetail: "Nira segar berwarna bening kekuningan dan beraroma harum",
+      "Air nira direbus di dalam wajan besar di atas perapian kayu bakar sambil terus diaduk hingga mendidih, berbusa keemasan, dan mengental menjadi karamel pekat.",
+    keyDetail: "Menghasilkan aroma wangi karamel yang khas",
   },
   {
     stepNumber: "03",
-    title: "Penyaringan Berlapis",
-    localTerm: "Pemurnian Nira Mentah",
-    description:
-      "Begitu tiba di dapur pengolahan, air nira segar disaring secara berlapis menggunakan saringan halus untuk memisahkan serbuk bunga aren, serpihan kulit kayu, atau kotoran alami dari kebun.",
-    keyDetail: "Menghasilkan cairan nira bersih yang siap direbus",
-  },
-  {
-    stepNumber: "04",
-    title: "Perebusan di Tungku Kayu Bakar",
-    localTerm: "Kawah & Api Alami",
-    description:
-      "Air nira dituangkan ke dalam wajan besar (kawah) di atas tungku tanah liat berbahan bakar kayu. Seiring air menguap, nira mendidih dan mengeluarkan buih keemasan yang terus dibersihkan sambil diaduk perlahan.",
-    keyDetail: "Panas kayu bakar memberikan aroma smoky-caramel yang khas",
-  },
-  {
-    stepNumber: "05",
-    title: "Pengadukan Pekat & Uji Tetes Air",
-    localTerm: "Menentukan Titik Matang",
-    description:
-      "Saat cairan berubah menjadi kental kecokelatan (pekat), api dikecilkan agar tidak gosong. Pengrajin menguji kematangan dengan meneteskan sedikit adonan gula ke dalam air dingin—jika langsung memadat dan lentur, gula siap diangkat.",
-    keyDetail: "Keahlian tangan orang tua dalam menjaga suhu agar tidak pahit",
-  },
-  {
-    stepNumber: "06",
     title: "Pencetakan & Pendinginan Alami",
-    localTerm: "Gula Aren Cetak Tradisional",
+    localTerm: "Tanpa Bahan Pengeras",
     description:
-      "Adonan gula aren panas dituangkan satu per satu ke dalam cetakan tradisional yang telah dibasahi air bersih. Tanpa bahan pengeras buatan, gula dibiarkan mengeras secara alami oleh suhu ruang hingga siap dilepas dari cetakan.",
-    keyDetail: "Menghasilkan gula cetak padat yang lembut saat diiris",
+      "Adonan gula aren matang dituangkan ke dalam cetakan tradisional dan dibiarkan memadat secara alami oleh suhu ruang hingga siap dikemas.",
+    keyDetail: "Tekstur padat namun tetap empuk saat diiris",
   },
 ];
 
@@ -184,7 +160,7 @@ export const PRODUCTS: ProductItem[] = [
     ordering: {
       availableForDirectOrder: false,
       availabilityNote:
-        "Diproduksi rutin setiap minggu sesuai hasil sadapan kebun aren keluarga.",
+        "Diproduksi rutin setiap minggu sesuai hasil sadapan.",
     },
   },
   {
