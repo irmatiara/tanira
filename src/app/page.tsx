@@ -29,7 +29,6 @@ import {
 } from "@/data/tanira";
 
 export default function TaniraLandingPage() {
-  const [activeStepIndex, setActiveStepIndex] = useState<number>(3); // Default highlight on Tahap 04 (Perebusan)
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
   const advantageIcons = [
@@ -327,169 +326,74 @@ export default function TaniraLandingPage() {
               </div>
             </div>
 
-            {/* Visual Feature + Highlighted Step Banner */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-12">
-              <div className="lg:col-span-7 relative rounded-3xl overflow-hidden border-2 border-[#A2AC82]/60 shadow-xl min-h-[340px] sm:min-h-[420px] bg-[#2E2D1D]">
-                <Image
-                  src="/images/proses-nira.jpg"
-                  alt="Proses Perebusan Air Nira Aren di Wajan Tungku Kayu Bakar"
-                  width={900}
-                  height={600}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0C3C01]/95 via-[#0C3C01]/25 to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 text-[#F1F2ED]">
-                  <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-[#A2AC82] text-[#0C3C01] mb-2">
+            {/* Full-Width Visual Feature Banner */}
+            <div className="relative rounded-3xl overflow-hidden border-2 border-[#A2AC82]/60 shadow-xl h-[340px] sm:h-[420px] lg:h-[460px] bg-[#2E2D1D] mb-12">
+              <Image
+                src="/images/proses-nira.jpg"
+                alt="Proses Perebusan Air Nira Aren di Wajan Tungku Kayu Bakar"
+                width={1200}
+                height={650}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0C3C01]/95 via-[#0C3C01]/35 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-8 flex flex-col lg:flex-row lg:items-end justify-between gap-6 text-[#F1F2ED]">
+                <div className="max-w-2xl">
+                  <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold bg-[#A2AC82] text-[#0C3C01] mb-2.5">
                     Dapur Pengolahan Tradisional
                   </span>
-                  <h3 className="font-[family-name:var(--font-serif)] text-2xl sm:text-3xl font-normal">
+                  <h3 className="font-[family-name:var(--font-serif)] text-2xl sm:text-3xl lg:text-4xl font-normal">
                     Perebusan Nira Segar di Atas Tungku Kayu Bakar
                   </h3>
-                  <p className="text-xs sm:text-sm text-[#F1F2ED]/90 mt-1 max-w-xl">
+                  <p className="text-xs sm:text-sm text-[#F1F2ED]/90 mt-1.5 leading-relaxed">
                     Di samping tungku tampak bumbung bambu penampung nira segar.
                     Air nira dimasak perlahan selama 3–4 jam hingga berbusa
                     keemasan dan mengental menjadi karamel gula aren murni.
                   </p>
                 </div>
-              </div>
 
-              {/* Active Step Detail Card in Deep Forest Green (#0C3C01) */}
-              <div className="lg:col-span-5 bg-[#0C3C01] text-[#F1F2ED] rounded-3xl p-6 sm:p-8 border-2 border-[#A2AC82]/50 shadow-xl flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center justify-between gap-2 pb-4 border-b border-[#5B6D49]">
-                    <span className="text-xs font-bold uppercase tracking-widest text-[#A2AC82]">
-                      Sorotan Tahap Pembuatan
+                <div className="hidden sm:flex items-center gap-3 shrink-0">
+                  <div className="bg-[#0C3C01]/85 backdrop-blur-md px-4 py-3 rounded-2xl border border-[#A2AC82]/40">
+                    <span className="block text-[10px] font-bold uppercase tracking-wider text-[#A2AC82]">
+                      Bahan Bakar
                     </span>
-                    <span className="inline-flex items-center gap-1.5 text-xs font-medium text-[#F1F2ED] bg-[#5B6D49]/60 border border-[#A2AC82]/40 px-3 py-1 rounded-full">
-                      <Clock className="w-3.5 h-3.5 text-[#A2AC82]" />
-                      {PROCESS_STEPS[activeStepIndex].timeWindow}
+                    <span className="text-sm font-bold text-[#F1F2ED]">
+                      Tungku Kayu
                     </span>
-                  </div>
-
-                  <div className="mt-6">
-                    <div className="flex items-baseline gap-3">
-                      <span className="font-[family-name:var(--font-serif)] text-5xl font-normal text-[#A2AC82]">
-                        {PROCESS_STEPS[activeStepIndex].stepNumber}
-                      </span>
-                      <div>
-                        <span className="text-xs uppercase tracking-wider text-[#A2AC82] font-semibold block">
-                          {PROCESS_STEPS[activeStepIndex].localTerm}
-                        </span>
-                        <h3 className="font-[family-name:var(--font-serif)] text-2xl sm:text-3xl font-normal text-[#F1F2ED] mt-0.5">
-                          {PROCESS_STEPS[activeStepIndex].title}
-                        </h3>
-                      </div>
-                    </div>
-
-                    <p className="text-sm sm:text-base text-[#F1F2ED]/90 leading-relaxed mt-5">
-                      {PROCESS_STEPS[activeStepIndex].description}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mt-8 pt-4 border-t border-[#5B6D49]">
-                  <p className="text-xs uppercase tracking-wider text-[#A2AC82] font-bold">
-                    Kunci Kualitas pada Tahap Ini:
-                  </p>
-                  <p className="text-sm text-[#F1F2ED] font-medium mt-1">
-                    “{PROCESS_STEPS[activeStepIndex].keyDetail}”
-                  </p>
-                  <div className="flex items-center justify-between mt-5">
-                    <span className="text-xs text-[#A2AC82]">
-                      Klik kartu tahap di bawah untuk melihat detailnya
-                    </span>
-                    <div className="flex gap-1.5">
-                      {PROCESS_STEPS.map((_, idx) => (
-                        <button
-                          key={idx}
-                          type="button"
-                          onClick={() => setActiveStepIndex(idx)}
-                          aria-label={`Pilih tahap ${idx + 1}`}
-                          className={`h-2 rounded-full transition-all ${
-                            activeStepIndex === idx
-                              ? "w-6 bg-[#A2AC82]"
-                              : "w-2 bg-[#5B6D49] hover:bg-[#A2AC82]/70"
-                          }`}
-                        />
-                      ))}
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* All 6 Steps Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {PROCESS_STEPS.map((step, index) => {
-                const isSelected = index === activeStepIndex;
-                return (
-                  <button
-                    key={step.stepNumber}
-                    type="button"
-                    onClick={() => setActiveStepIndex(index)}
-                    className={`text-left rounded-2xl p-6 transition-all border-2 flex flex-col justify-between ${
-                      isSelected
-                        ? "bg-[#0C3C01] text-[#F1F2ED] border-[#A2AC82] shadow-lg"
-                        : "bg-[#F1F2ED] text-[#2E2D1D] border-[#A2AC82]/60 hover:bg-white hover:border-[#0C3C01]"
-                    }`}
-                  >
-                    <div>
-                      <div className="flex items-center justify-between gap-2 mb-3">
-                        <span
-                          className={`font-[family-name:var(--font-serif)] text-2xl font-normal px-3 py-1 rounded-xl ${
-                            isSelected
-                              ? "bg-[#A2AC82] text-[#0C3C01]"
-                              : "bg-[#5B6D49] text-[#F1F2ED]"
-                          }`}
-                        >
-                          Tahap {step.stepNumber}
-                        </span>
-                        <span
-                          className={`text-xs font-semibold ${
-                            isSelected ? "text-[#A2AC82]" : "text-[#5B6D49]"
-                          }`}
-                        >
-                          {step.timeWindow}
-                        </span>
-                      </div>
-
-                      <h4
-                        className={`font-[family-name:var(--font-serif)] text-xl font-normal mt-2 ${
-                          isSelected ? "text-[#F1F2ED]" : "text-[#0C3C01]"
-                        }`}
-                      >
-                        {step.title}
-                      </h4>
-                      <p
-                        className={`text-xs font-semibold mt-0.5 ${
-                          isSelected ? "text-[#A2AC82]" : "text-[#7E7B56]"
-                        }`}
-                      >
-                        {step.localTerm}
-                      </p>
-                      <p
-                        className={`text-sm leading-relaxed mt-3 ${
-                          isSelected
-                            ? "text-[#F1F2ED]/85"
-                            : "text-[#2E2D1D]/80"
-                        }`}
-                      >
-                        {step.description}
-                      </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {PROCESS_STEPS.map((step) => (
+                <div
+                  key={step.stepNumber}
+                  className="text-left rounded-2xl p-6 transition-all border-2 bg-[#F1F2ED] text-[#2E2D1D] border-[#A2AC82]/60 hover:bg-white hover:border-[#0C3C01] shadow-sm hover:shadow-md flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-3">
+                      <span className="font-[family-name:var(--font-serif)] text-2xl font-normal px-3.5 py-1 rounded-xl bg-[#0C3C01] text-[#A2AC82]">
+                        Tahap {step.stepNumber}
+                      </span>
                     </div>
 
-                    <div
-                      className={`mt-5 pt-3 border-t flex items-center justify-between text-xs font-semibold ${
-                        isSelected
-                          ? "border-[#5B6D49] text-[#A2AC82]"
-                          : "border-[#A2AC82]/50 text-[#0C3C01]"
-                      }`}
-                    >
-                      <span>{step.keyDetail}</span>
-                    </div>
-                  </button>
-                );
-              })}
+                    <h4 className="font-[family-name:var(--font-serif)] text-xl font-normal mt-2 text-[#0C3C01]">
+                      {step.title}
+                    </h4>
+                    <p className="text-xs font-semibold mt-0.5 text-[#7E7B56]">
+                      {step.localTerm}
+                    </p>
+                    <p className="text-sm leading-relaxed mt-3 text-[#2E2D1D]/85">
+                      {step.description}
+                    </p>
+                  </div>
+
+                  <div className="mt-5 pt-3 border-t border-[#A2AC82]/50 flex items-center justify-between text-xs font-semibold text-[#0C3C01]">
+                    <span>{step.keyDetail}</span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
