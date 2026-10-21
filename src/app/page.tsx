@@ -13,7 +13,6 @@ export default function TaniraLandingPage() {
   return (
     <div className="min-h-screen flex flex-col bg-sage/30 text-earth">
       <Navbar />
-
       <main className="flex-1">
         <HeroSection />
         <AdvantagesSection />
@@ -23,7 +22,6 @@ export default function TaniraLandingPage() {
         <FaqSection />
         <LocationSection />
       </main>
-
       <Footer />
     </div>
   );

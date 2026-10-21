@@ -4,19 +4,12 @@ import { COMPARISON_ROWS } from "@/data/tanira";
 
 export default function ComparisonSection() {
   return (
-    <section
-      id="perbandingan"
-      className="scroll-mt-20 py-10 lg:py-12 bg-forest text-mist border-b border-moss"
-    >
+    <section id="perbandingan" className="scroll-mt-20 py-10 lg:py-12 bg-forest text-mist border-b border-moss">
       <div className="w-full max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-7 lg:mb-8">
           <div className="max-w-2xl space-y-3">
-            <span className="inline-block px-3.5 py-1 rounded-full bg-moss text-mist text-xs font-bold uppercase tracking-[0.18em]">
-              Panduan Mengenali Kualitas
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-normal text-mist">
-              Cara Membedakan Gula Aren Cetak Asli vs Campuran
-            </h2>
+            <span className="inline-block px-3.5 py-1 rounded-full bg-moss text-mist text-xs font-bold uppercase tracking-[0.18em]">Panduan Mengenali Kualitas</span>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-normal text-mist">Cara Membedakan Gula Aren Cetak Asli vs Campuran</h2>
           </div>
           <p className="text-sm sm:text-base text-mist/80 leading-relaxed max-w-xl">
             Sering kali pembeli sulit membedakan mana gula aren murni dan mana
@@ -42,14 +35,9 @@ export default function ComparisonSection() {
           {/* Rows: Stacked Cards on Mobile, Table Rows on Desktop */}
           <div className="space-y-4 md:space-y-0 md:divide-y md:divide-sage/45">
             {COMPARISON_ROWS.map((row) => (
-              <div
-                key={row.aspect}
-                className="bg-mist text-earth rounded-2xl md:rounded-none overflow-hidden border-2 border-sage md:border-0 shadow-md md:shadow-none grid grid-cols-1 md:grid-cols-12 text-sm sm:text-base"
-              >
+              <div key={row.aspect} className="bg-mist text-earth rounded-2xl md:rounded-none overflow-hidden border-2 border-sage md:border-0 shadow-md md:shadow-none grid grid-cols-1 md:grid-cols-12 text-sm sm:text-base">
                 {/* Aspect Title */}
-                <div className="px-5 py-3.5 sm:p-6 md:col-span-3 font-bold text-mist md:text-forest bg-moss md:bg-sage/25 flex items-center">
-                  {row.aspect}
-                </div>
+                <div className="px-5 py-3.5 sm:p-6 md:col-span-3 font-bold text-mist md:text-forest bg-moss md:bg-sage/25 flex items-center">{row.aspect}</div>
 
                 {/* Authentic Aren Cell */}
                 <div className="p-5 sm:p-6 md:col-span-5 text-forest font-medium bg-sage/15 md:bg-sage/10 md:border-l border-sage/45 leading-relaxed space-y-1.5">

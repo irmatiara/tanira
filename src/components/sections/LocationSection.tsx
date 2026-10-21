@@ -15,41 +15,23 @@ export default function LocationSection() {
                 <span>Titik Lokasi Pengolahan</span>
               </span>
 
-              <h2 className="font-serif text-3xl sm:text-4xl font-normal text-mist mt-4 leading-tight">
-                {LOCATION_INFO.title}
-              </h2>
-
-              <p className="text-sm sm:text-base text-mist/85 leading-relaxed mt-3">
-                {LOCATION_INFO.description}
-              </p>
+              <h2 className="font-serif text-3xl sm:text-4xl font-normal text-mist mt-4 leading-tight">{LOCATION_INFO.title}</h2>
+              <p className="text-sm sm:text-base text-mist/85 leading-relaxed mt-3">{LOCATION_INFO.description}</p>
 
               <div className="mt-6 p-4 rounded-2xl bg-moss/35 border border-sage/35 space-y-2">
                 <div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-sage block">
-                    Wilayah
-                  </span>
-                  <span className="text-sm font-semibold text-mist block">
-                    {LOCATION_INFO.region}
-                  </span>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-sage block">Wilayah</span>
+                  <span className="text-sm font-semibold text-mist block">{LOCATION_INFO.region}</span>
                 </div>
                 <div className="pt-2 border-t border-sage/25">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-sage block">
-                    Koordinat Peta
-                  </span>
-                  <span className="text-xs font-mono text-mist/90 block">
-                    {LOCATION_INFO.coordinatesLabel}
-                  </span>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-sage block">Koordinat Peta</span>
+                  <span className="text-xs font-mono text-mist/90 block">{LOCATION_INFO.coordinatesLabel}</span>
                 </div>
               </div>
             </div>
 
             <div className="mt-8">
-              <a
-                href={LOCATION_INFO.googleMapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2.5 py-3.5 px-5 rounded-xl bg-sage text-forest font-bold text-sm hover:bg-mist transition-all shadow-md"
-              >
+              <a href={LOCATION_INFO.googleMapsUrl} target="_blank" rel="noopener noreferrer" className="w-full inline-flex items-center justify-center gap-2.5 py-3.5 px-5 rounded-xl bg-sage text-forest font-bold text-sm hover:bg-mist transition-all shadow-md">
                 <MapPin className="w-4 h-4" />
                 <span>Buka Petunjuk Arah di Google Maps</span>
                 <ExternalLink className="w-4 h-4" />
@@ -59,17 +41,7 @@ export default function LocationSection() {
 
           {/* Right Map Embed Column */}
           <div className="lg:col-span-7 rounded-3xl overflow-hidden border-2 border-sage shadow-2xl bg-earth min-h-[380px] sm:min-h-[460px] relative">
-            <iframe
-              src={LOCATION_INFO.embedUrl}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Peta Lokasi Dapur Gula Aren Tanira"
-              className="w-full h-full min-h-[380px] sm:min-h-[460px]"
-            />
+            <iframe src={LOCATION_INFO.embedUrl} width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Peta Lokasi Dapur Gula Aren Tanira" className="w-full h-full min-h-[380px] sm:min-h-[460px]"/>
           </div>
         </div>
       </div>

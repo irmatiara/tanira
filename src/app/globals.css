@@ -4,7 +4,7 @@
   --font-serif: var(--font-serif), Georgia, serif;
   --font-sans: var(--font-sans), system-ui, sans-serif;
 
-  /* Palet Warna Utama Tanira (Bisa dipanggil via bg-*, text-*, border-*, dll) */
+  /* Palet Warna Utama */
   --color-mist: #f1f2ed;
   --color-sage: #a2ac82;
   --color-moss: #5b6d49;

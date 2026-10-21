@@ -4,19 +4,12 @@ import { PRODUCTS, ORDERING_CONFIG } from "@/data/tanira";
 
 export default function ProductsSection() {
   return (
-    <section
-      id="produk"
-      className="scroll-mt-20 py-10 lg:py-12 bg-sage-surface border-b border-moss/35"
-    >
+    <section id="produk" className="scroll-mt-20 py-10 lg:py-12 bg-sage-surface border-b border-moss/35">
       <div className="w-full max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-7 lg:mb-8">
           <div className="max-w-2xl space-y-2.5">
-            <span className="inline-block px-3.5 py-1 rounded-full bg-forest text-sage text-xs font-bold uppercase tracking-[0.18em]">
-              Hasil Olahan Keluarga Tanira
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-normal text-forest">
-              Varian Hasil Aren Kami
-            </h2>
+            <span className="inline-block px-3.5 py-1 rounded-full bg-forest text-sage text-xs font-bold uppercase tracking-[0.18em]">Hasil Olahan Keluarga Tanira</span>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-normal text-forest">Varian Hasil Aren Kami</h2>
           </div>
           <p className="text-sm sm:text-base text-earth/85 leading-relaxed max-w-xl">
             Fokus pada <strong className="text-forest">Gula Aren Cetak</strong>{" "}
@@ -125,10 +118,7 @@ export default function ProductsSection() {
                 {/* Availability Footer */}
                 <div className="mt-6 pt-4 border-t border-sage/35">
                   {ORDERING_CONFIG.enableDirectOrder ? (
-                    <button
-                      type="button"
-                      className="w-full py-3.5 px-5 rounded-xl bg-sage text-forest font-bold text-sm hover:bg-mist transition-colors"
-                    >
+                    <button type="button" className="w-full py-3.5 px-5 rounded-xl bg-sage text-forest font-bold text-sm hover:bg-mist transition-colors">
                       Pesan {product.name}
                     </button>
                   ) : (
@@ -170,9 +160,7 @@ export default function ProductsSection() {
                 <div className="w-9 h-9 rounded-xl bg-forest border border-sage/40 flex items-center justify-center shrink-0 text-sage">
                   <Sparkles className="w-4 h-4" />
                 </div>
-                <h4 className="text-sm sm:text-base font-bold text-mist">
-                  Pengembangan Fitur Pemesanan Langsung
-                </h4>
+                <h4 className="text-sm sm:text-base font-bold text-mist">Pengembangan Fitur Pemesanan Langsung</h4>
               </div>
               <p className="text-xs sm:text-sm text-mist/85 leading-relaxed">
                 Halaman ini dirancang sebagai pusat informasi proses & keaslian
@@ -180,9 +168,7 @@ export default function ProductsSection() {
                 pengembangan selanjutnya.
               </p>
             </div>
-            <span className="shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold bg-forest text-sage border border-sage/50">
-              Segera Hadir
-            </span>
+            <span className="shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold bg-forest text-sage border border-sage/50">Segera Hadir</span>
           </div>
         )}
       </div>
