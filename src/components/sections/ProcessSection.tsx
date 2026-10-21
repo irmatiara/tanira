@@ -29,13 +29,13 @@ export default function ProcessSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           {/* Left Column: Kitchen Visual */}
-          <div className="lg:col-span-5 relative rounded-3xl overflow-hidden border-2 border-sage/60 shadow-xl min-h-[300px] sm:min-h-[380px] bg-earth">
+          <div className="lg:col-span-5 relative rounded-3xl overflow-hidden border-2 border-sage/60 shadow-xl h-[320px] sm:h-[380px] lg:h-auto lg:min-h-full bg-earth">
             <Image
-              src="/images/proses-nira.jpg"
+              src="/images/proses-nira.jpeg"
               alt="Proses Perebusan Air Nira Aren di Wajan Tungku Kayu Bakar"
-              width={900}
-              height={650}
-              className="w-full h-full object-cover"
+              fill
+              sizes="(max-width: 1024px) 100vw, 42vw"
+              className="object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-forest/95 via-forest/25 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 text-mist">
