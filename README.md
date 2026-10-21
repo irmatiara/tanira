@@ -2,10 +2,13 @@
 
 Website *landing page* untuk usaha keluarga **TANIRA**, pengrajin **Gula Aren Cetak Tradisional** & penyedia **Air Nira Aren Segar**.
 
-## Struktur File Penting
-- `src/data/tanira.ts` — Tempat mengubah teks konten, produk, FAQ, dan titik lokasi Google Maps.
+## Struktur Folder & File
+- `src/types/tanira.ts` — Definisi tipe data TypeScript.
+- `src/data/tanira.ts` — Konten teks, daftar produk, tahapan proses, FAQ, dan lokasi Google Maps.
+- `src/components/layout/` — Komponen `Navbar.tsx` dan `Footer.tsx`.
+- `src/components/sections/` — Komponen per seksi halaman (`HeroSection`, `AdvantagesSection`, `ProcessSection`, `ProductsSection`, `ComparisonSection`, `FaqSection`, `LocationSection`).
 - `src/app/globals.css` — Konfigurasi tema warna (`mist`, `sage`, `moss`, `forest`, `earth`, `olive`).
-- `src/app/page.tsx` — Tampilan utama halaman *landing page*.
+- `src/app/page.tsx` — Halaman utama yang menyusun seluruh seksi.
 
 ## Menjalankan di Lokal
 ```bash

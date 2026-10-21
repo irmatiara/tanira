@@ -1,48 +1,21 @@
-export interface ProductItem {
-  id: string;
-  slug: string;
-  name: string;
-  badge: string;
-  isPrimary: boolean;
-  shortDescription: string;
-  fullDescription: string;
-  highlights: string[];
-  characteristics: {
-    label: string;
-    value: string;
-  }[];
-  usageIdeas: string[];
-  storageTip: string;
-  // Disiapkan untuk pengembangan fitur pemesanan langsung ke depannya
-  ordering: {
-    availableForDirectOrder: boolean;
-    availabilityNote: string;
-    unitLabel?: string;
-    estimatedPrice?: number;
-  };
-}
+import type {
+  NavItem,
+  ProductItem,
+  ProcessStep,
+  PurityAdvantage,
+  ComparisonRow,
+  FaqItem,
+  LocationInfo,
+} from "@/types/tanira";
 
-export interface ProcessStep {
-  stepNumber: string;
-  title: string;
-  localTerm: string;
-  description: string;
-  keyDetail: string;
-}
-
-export interface PurityAdvantage {
-  id: string;
-  title: string;
-  subtitle: string;
-  description: string;
-  metric: string;
-}
-
-export interface ComparisonRow {
-  aspect: string;
-  authenticAren: string;
-  mixedSugar: string;
-}
+export const NAV_ITEMS: NavItem[] = [
+  { label: "Keunggulan", href: "#keunggulan" },
+  { label: "Proses", href: "#proses" },
+  { label: "Produk", href: "#produk" },
+  { label: "Keaslian", href: "#perbandingan" },
+  { label: "FAQ", href: "#faq" },
+  { label: "Lokasi", href: "#lokasi" },
+];
 
 /**
  * Konfigurasi fitur pemesanan.
@@ -228,7 +201,7 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
   },
 ];
 
-export const FAQS = [
+export const FAQS: FaqItem[] = [
   {
     question: "Kenapa Gula Aren Tanira hanya tersedia dalam bentuk gula cetak?",
     answer:
@@ -256,7 +229,7 @@ export const FAQS = [
   },
 ];
 
-export const LOCATION_INFO = {
+export const LOCATION_INFO: LocationInfo = {
   title: "Lokasi Dapur & Pengolahan Aren Keluarga",
   region: "Kec. Bandar Masilam, Kab. Simalungun, Sumatera Utara",
   coordinatesLabel: "3°14'10.7\"N 99°15'50.9\"E",
