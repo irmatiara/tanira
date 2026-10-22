@@ -69,7 +69,7 @@ export default function HeroSection() {
           {/* Right Column: 5 Columns Editorial Image Showcase */}
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-3xl overflow-hidden border-2 border-sage/60 shadow-2xl bg-earth">
-              <Image src="/images/gula-aren-hero.jpg" alt="Gula Aren Cetak Asli dan Air Nira Aren Segar Tanira" width={900} height={700} className="w-full h-[400px] sm:h-[480px] lg:h-[520px] object-cover" priority />
+              <Image src="/images/gula-aren-hero.png" alt="Gula Aren Cetak Asli dan Air Nira Aren Segar Tanira" width={900} height={700} className="w-full h-[400px] sm:h-[480px] lg:h-[520px] object-cover" priority />
               <div className="absolute inset-0 bg-gradient-to-t from-forest/90 via-transparent to-transparent" />
 
               {/* Bottom Caption inside Hero Image */}
