@@ -76,7 +76,6 @@ export const PROCESS_STEPS: ProcessStep[] = [
   {
     stepNumber: "01",
     title: "Penyadapan & Penyaringan Nira Segar",
-    localTerm: "Panen Pagi & Sore Hari",
     description:
       "Tetesan air nira disadap langsung dari pohon aren setiap pagi dan sore, lalu segera disaring berlapis agar bersih dan tetap segar sebelum terfermentasi.",
     keyDetail: "100% air nira aren segar tanpa tambahan air",
@@ -84,7 +83,6 @@ export const PROCESS_STEPS: ProcessStep[] = [
   {
     stepNumber: "02",
     title: "Perebusan di Tungku Kayu Bakar",
-    localTerm: "Dimasak Perlahan ± 3–4 Jam",
     description:
       "Air nira direbus di dalam wajan besar di atas perapian kayu bakar sambil terus diaduk hingga mendidih, berbusa keemasan, dan mengental menjadi karamel pekat.",
     keyDetail: "Menghasilkan aroma wangi karamel yang khas",
@@ -92,7 +90,6 @@ export const PROCESS_STEPS: ProcessStep[] = [
   {
     stepNumber: "03",
     title: "Pencetakan & Pendinginan Alami",
-    localTerm: "Tanpa Bahan Pengeras",
     description:
       "Adonan gula aren matang dituangkan ke dalam cetakan tradisional dan dibiarkan memadat secara alami oleh suhu ruang hingga siap dikemas.",
     keyDetail: "Tekstur padat namun tetap empuk saat diiris",

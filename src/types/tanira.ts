@@ -29,7 +29,6 @@ export interface ProductItem {
 export interface ProcessStep {
   stepNumber: string;
   title: string;
-  localTerm: string;
   description: string;
   keyDetail: string;
 }

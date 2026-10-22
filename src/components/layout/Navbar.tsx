@@ -47,21 +47,21 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 bg-forest/95 backdrop-blur-md border-b border-moss/60">
-      <div className="w-full max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between gap-6">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-16 sm:h-20 flex items-center justify-between gap-4 sm:gap-6">
         {/* Brand Logo */}
         <a href="#"
           onClick={() => {
             setActiveHref("");
             setMobileMenuOpen(false);
           }}
-          className="flex items-center gap-3.5 shrink-0 group"
+          className="flex items-center gap-3 shrink-0 group"
         >
-          <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-mist border border-sage flex items-center justify-center p-1">
+          <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-xl overflow-hidden bg-mist border border-sage flex items-center justify-center p-1">
             <Image src="/images/logo-tanira.png" alt="Logo Tanira - Tunas Alam Nira Asli" width={48} height={48} className="object-contain w-full h-full" priority />
           </div>
           <div>
-            <span className="block font-serif text-2xl font-normal tracking-wider text-mist leading-none">TANIRA</span>
-            <span className="block text-[10px] tracking-[0.18em] uppercase text-sage font-semibold mt-1">Tunas Alam Nira Asli</span>
+            <span className="block font-serif text-xl sm:text-2xl font-normal tracking-wider text-mist leading-none">TANIRA</span>
+            <span className="block text-[9px] sm:text-[10px] tracking-[0.18em] uppercase text-sage font-semibold mt-0.5 sm:mt-1">Tunas Alam Nira Asli</span>
           </div>
         </a>
 
